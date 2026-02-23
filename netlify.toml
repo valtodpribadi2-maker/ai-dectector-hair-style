@@ -1,19 +1,9 @@
 [build]
   publish = "."
-  command = "npm run build"
 
-[build.environment]
-  HUGO_VERSION = "0.80.0"
-
-# Inject environment variable ke window.env saat build
 [[headers]]
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type, Authorization"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
