@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hair Style Detector - Groq Vision</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💇 AI Hair Style Detector</h1>
+            <p>Powered by Groq Llama 4 Vision | Upload foto untuk analisis gaya rambut</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <img src="https://api.iconify.design/ph:upload-bold.svg?color=%23666" alt="upload" class="upload-icon">
+                        <p>Klik atau drag & drop foto disini</p>
+                        <span class="upload-hint">Format: JPG, PNG (Maks 5MB)</span>
+                    </div>
+                </div>
+                
+                <div class="preview-area" id="previewArea" style="display: none;">
+                    <img id="previewImage" src="" alt="Preview">
+                    <button class="change-image-btn" id="changeImageBtn">
+                        <img src="https://api.iconify.design/ph:pencil-bold.svg?color=white" alt="edit">
+                        Ganti Foto
+                    </button>
+                </div>
+            </div>
+
+            <div class="analyze-section">
+                <button class="analyze-btn" id="analyzeBtn" disabled>
+                    <span>Analisis Gaya Rambut</span>
+                    <img src="https://api.iconify.design/ph:magic-wand-bold.svg?color=white" alt="analyze">
+                </button>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Groq AI sedang menganalisis gaya rambut Anda...</p>
+                    <small>Kecepatan Groq: 500+ token/detik ⚡</small>
+                </div>
+
+                <div class="result-content" id="resultContent">
+                    <h2>Hasil Analisis:</h2>
+                    <div class="hair-style-result" id="hairStyleResult"></div>
+                    
+                    <div class="style-details">
+                        <h3>Detail Gaya Rambut:</h3>
+                        <div class="style-description" id="styleDescription"></div>
+                    </div>
+
+                    <div class="recommendations">
+                        <h3>Rekomendasi Produk:</h3>
+                        <div class="products-grid" id="productsGrid"></div>
+                    </div>
+
+                    <div class="similar-styles">
+                        <h3>Gaya Rambut Serupa:</h3>
+                        <div class="similar-grid" id="similarGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Groq Cloud • Llama 4 Vision • © 2024 AI Hair Style Detector</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
